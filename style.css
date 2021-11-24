@@ -1,0 +1,750 @@
+/* reset des marges  */
+*{
+  margin:0;
+  padding:0;
+}
+:root{
+  --fond-noir:rgb(41, 41, 41);
+  --text-blanc:rgb(236, 236, 236);
+  --saumon:rgb(226, 204, 176);
+  --gris:rgb(235, 235, 235);
+}
+@font-face {
+  font-family: 'realist';
+  src: url('fonts/realist-webfont.woff2') format('woff2'),
+       url('fonts/realist-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'rockstar';
+  src: url('fonts/rockstar-extrabold-webfont.woff2') format('woff2'),
+       url('fonts/rockstar-extrabold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'migha';
+  src: url('fonts/migha-expanded-webfont.woff2') format('woff2'),
+       url('fonts/migha-expanded-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'philo';
+  src: url('fonts/philosopher-regular-webfont.woff2') format('woff2'),
+       url('fonts/philosopher-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'philob';
+  src: url('fonts/philosopher-bold-webfont.woff2') format('woff2'),
+       url('fonts/philosopher-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  background-color: rgb(224, 215, 206);
+  color: rgb(49, 49, 49);
+  font-family: 'roboto';
+  font-size: 1.5rem;
+  text-align: center;
+}
+a {
+  text-decoration: none;
+}
+/* container largeur max */
+.container {
+  max-width: 1200px;
+  margin:auto;
+}
+.fondgris {
+  background-color: var(--gris);
+  box-shadow: 0 0 10px rgb(71, 71, 71);
+}
+.marge-top {
+  margin-top: 70px;
+}
+/* logo et nom restaurant */
+.resto {
+    position: fixed;
+    left: 20px;
+    top:15px; 
+    color: rgb(236, 236, 236);  
+    font-size: 2.4rem; 
+}
+.resto2 {
+  position: fixed;
+  left: 20px;
+  color: rgb(236, 236, 236);
+  top: 50px;   
+  font-size: 1rem;
+  font-style: italic;
+}
+#head #menu #tel {
+  position: fixed;
+  top: 21px;
+  font-size: 1.9rem;
+  right: 80px;
+}
+#head a {
+color: var(--text-blanc);
+}
+/* menu burger  */
+#menu {
+  z-index: 10000;
+  font-family: 'realist', serif;
+  background-color: rgb(41, 41, 41);
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  -moz-box-shadow: 0 0 8px rgb(143, 143, 143);
+  -webkit-box-shadow: 0 0 8px rgb(128, 128, 128);
+  box-shadow: 0 0 8px rgb(71, 71, 71);
+}
+.burger {
+    z-index: 10000;
+    color: rgb(236, 236, 236);
+    display: inline-block;
+    border: 0;
+    outline: 0;
+    padding: 0;
+    cursor: pointer;
+    border-bottom: 4px solid currentColor;
+    width: 28px;
+    transition: border-bottom 1s ease-in-out;
+    -webkit-transition: border-bottom 1s ease-in-out;
+    position: fixed;
+    right: 20px;
+    top: 30px;
+  }
+  .burger::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+  .burger:before {
+    content: "";
+    display: block;
+    border-bottom: 4px solid currentColor;
+    width: 100%;
+    margin-bottom: 5px;
+    transition: transform 0.5s ease-in-out;
+    -webkit-transition: -webkit-transform 0.5s ease-in-out;
+
+  }
+  .burger:after {
+    content: "";
+    display: block;
+    border-bottom: 4px solid currentColor;
+    width: 100%;
+    margin-bottom: 5px;
+    transition: transform 0.5s ease-in-out;
+    -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  }
+  .burger-check {
+    display: none;
+  }
+  .burger-check:checked ~ .burger {
+    border-bottom: 4px solid transparent;
+    transition: border-bottom 0.8s ease-in-out;
+    -webkit-transition: border-bottom 0.8s ease-in-out;
+  }
+  .burger-check:checked ~ .burger:before {
+    -ms-transform: rotate(-405deg) translateY(1px) translateX(-3px);
+        transform: rotate(-405deg) translateY(1px) translateX(-3px);
+    -webkit-transform: rotate(-405deg) translateY(1px) translateX(-3px);
+    transition: transform 0.5s ease-in-out;
+    -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  }
+  .burger-check:checked ~ .burger:after {
+    -ms-transform: rotate(405deg) translateY(-4px) translateX(-5px);
+        transform: rotate(405deg) translateY(-4px) translateX(-5px);
+    -webkit-transform: rotate(405deg) translateY(-4px) translateX(-5px);
+    transition: transform 0.5s ease-in-out;
+    -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  }
+  .navigation {
+    z-index: 9999;
+    font-family:'philob';
+    font-weight: 900;
+    overflow: hidden;
+    max-height: 0;
+    -webkit-transition: max-height 0.5s ease-in-out;
+            transition: max-height 0.5s ease-in-out;
+    position: fixed;
+    background-color: rgb(41, 41, 41);
+    width: 100%;
+    opacity: 0.9;
+    font-weight: 100;
+    letter-spacing: 0.08rem;
+    
+  }
+  .burger-check:checked ~ .navigation {
+    max-height: 500px;
+    -webkit-transition: max-height 0.5s ease-in-out;
+            transition: max-height 0.5s ease-in-out;
+  }
+  #navigation1 ul {
+    margin-top: 25px;
+ 
+  }
+  #navigation1 li {
+    list-style: none;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    
+  }
+  #navigation1 li a {
+    display: block;
+    text-decoration: none;
+    color: rgb(236, 236, 236);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: end;
+    padding-right: 25px;
+  }
+  #navigation1 li a:hover {
+    background-color: rgb(65, 65, 65);
+  }
+  /* photo de fond 1ere section*/
+  #photoback1 {
+    background-image: url('images/italian-cuisine.jpg');
+    height: 800px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 70px;
+    -moz-box-shadow: 0 0 10px rgb(143, 143, 143);
+  -webkit-box-shadow: 0 0 10px rgb(128, 128, 128);
+  box-shadow: 0 0 10px rgb(71, 71, 71);
+  }
+  /* paramètre des boutons du site */
+  .boutons {
+    z-index: 1;
+    font-size: 1.2rem;
+    display:flex;
+    justify-content: center;
+    align-content: center;
+    font-weight: bold;
+    align-items: center;
+  }
+  .boutons a {
+    font-family: 'philob';
+    text-transform: uppercase;
+    font-weight: 800;
+    color:white;
+    background-color:  rgb(41, 41, 41);
+    width: 130px;
+    border:1px solid rgb(32, 32, 32);
+    border-radius: 3px;
+    text-decoration: none;
+    opacity: 0.85;
+}
+.boutons a:hover {
+  background-color: blanchedalmond;
+  color: rgb(54, 54, 54);
+  -moz-box-shadow: 0 0 10px rgb(143, 143, 143);
+  -webkit-box-shadow: 0 0 10px rgb(128, 128, 128);
+  box-shadow: 0 0 10px rgb(71, 71, 71);
+}
+  /* boutons 1ere section */
+.boutonaccueil {
+  position: relative;
+  bottom: 300px;
+}
+.boutonaccueil a{
+  padding: 20px;
+  margin: 5px;
+}
+.boutonaccueil a:hover {
+  -moz-box-shadow: 0 0 10px rgb(167, 209, 50);
+  -webkit-box-shadow: 0 0 20px rgb(230, 226, 28);
+  box-shadow: 0 0 20px rgb(248, 255, 183);
+}
+a.boutonreservation{
+  background-color: rgb(255, 151, 65);
+}
+/* 2éme section presentation restaurant */
+#contenu #ecran2 {
+  position: relative;
+  top: -60px;
+  padding: 20px 20px 0px 20px;
+  
+}
+#contenu #ecran2 h3, h4, small {
+font-family: 'realist';
+}
+#contenu #ecran2 h3 {
+  font-size: 1.2rem;
+  font-family:'roboto';
+}
+#contenu #ecran2 h4 {
+  font-size: 2.8rem;
+}
+#contenu #ecran2 small {
+  position: relative;
+  font-size: 1.2rem;
+  font-style: italic;
+  top: -20px;
+}
+#contenu #ecran2 h5{
+  padding-top: 20px;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+/* bouton photo de la 2ième section */
+#contenu #ecran2 a.boutonphoto{
+margin-top: 35px;
+padding: 20px;
+font-size: 1.3rem;
+}
+/* 3iéme section formule et carte */
+#ecran3 {
+  background-image: url('images/wooden-texture_ld.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  -moz-box-shadow: 0 0 10px rgb(143, 143, 143);
+  -webkit-box-shadow: 0 0 10px rgb(128, 128, 128);
+  box-shadow: 0 0 10px rgb(71, 71, 71);
+  padding-bottom: 20px;
+}
+#ecran3 h3 {
+  padding-top: 20px;
+  font-family: 'realist';
+  font-size: 2.5rem;
+  color: var(--text-blanc);
+  letter-spacing: 0.05rem;
+}
+#ecran3 small {
+  position: relative;
+  top: -25px;
+  font-size: 1.5rem;
+  font-style: italic;
+}
+#ecran3 #articles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  font-family: 'roboto';
+  font-size: 1.2rem;
+}
+#ecran3 .formule {
+margin: 10px;
+}
+#ecran3 .vignetteformule h4 {
+font-family: 'philo';
+font-size: 1.2rem;
+padding-bottom: 10px;
+font-weight: bold;
+letter-spacing: 0.1rem;
+text-transform: uppercase;
+}
+#ecran3 .vignetteformule p:last-child {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: rgb(68, 187, 255);
+}
+#ecran3 a.vignetteformule{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  width: 300px;
+  height: 150px;
+  text-decoration: none;
+  border-radius: 5px;
+  color: white;
+  text-shadow: 1px 1px 1px black, -1px -1px 1px black
+}
+#ecran3 a.vignetteformule:hover{
+  -moz-box-shadow: 0 0 10px rgb(167, 209, 50);
+  -webkit-box-shadow: 0 0 20px rgb(230, 226, 28);
+  box-shadow: 0 0 20px rgb(248, 255, 183);
+  opacity: 0.85;
+}
+#contenu #ecran3 a.boutoncarte{
+  margin: 20px;
+  padding: 15px;
+  font-size: 1.2rem;
+  background-color: rgb(255, 151, 65);
+}
+#contenu #ecran3 a.boutoncarte:hover{
+    background-color: var(--saumon);
+    -moz-box-shadow: 0 0 10px rgb(167, 209, 50);
+  -webkit-box-shadow: 0 0 20px rgb(230, 226, 28);
+  box-shadow: 0 0 20px rgb(248, 255, 183);
+}
+#contenu #ecran3 #articles #moussaillon {
+  background-image: url('images/steak_frite_ld.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#contenu #ecran3 #articles #jour {
+  background-image: url('images/poisson_grillé_ld.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#contenu #ecran3 #articles #express {
+  background-image: url('images/tartare_saumon_ld.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#contenu #ecran3 #articles #tradition {
+  background-image: url('images/saumon_ld.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* 4ième section présentation des cuisiniers */
+#cuisinier {
+  display: flex;
+  flex-wrap: wrap;
+  
+  align-items: center;
+  margin: 0px auto;
+  font-size: 1.6rem;
+  max-width: 800px;
+}
+#cuisinier .card {
+  max-width: 300px;
+  margin: 30px auto;
+}
+#cuisinier .card img {
+  min-width: 250px;
+  max-width: 450px;
+  
+  border-radius: 7%;
+}
+#cuistos h3 {
+  font-family: 'realist';
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+#cuisinier .card h4 {
+  margin-top: 10px auto;
+  font-family: 'roboto';
+  font-size: 1.7rem;
+  font-weight: 400;
+}
+#cuisinier .card h5 {
+  font-size: 1.1rem;
+  font-style: italic;
+  font-weight: 300;
+  margin-bottom: 15px;
+  line-height: 7px;
+}
+#cuisinier .card p{
+  font-family: 'roboto';
+  font-size: 1.3rem;
+}
+/* 5iéme section pied de page*/
+#pied {
+  color: var(--text-blanc);
+  -moz-box-shadow: 0 0 10px rgb(143, 143, 143);
+  -webkit-box-shadow: 0 0 10px rgb(128, 128, 128);
+  box-shadow: 0 0 10px rgb(71, 71, 71);
+}
+#fond-tableau {
+  background-image: url('images/blackboard_ld.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: 20px;
+}
+#pied #flexpied {
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: center;
+}
+#pied #instagram #instaflex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 620px;
+}
+#pied #instagram #instaflex .photos img{
+width: 170px;
+height: 150px;
+background-color: yellow;
+margin: 0px 2px;
+}
+#instagram h3, #localisation h3, #horaires h3{
+  margin: 25px auto 25px auto;
+  font-family: 'philob';
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+#pied #localisation #map{
+  border-radius: 2%;
+}
+#pied #horaires #ouverture {
+    font-family: 'roboto';
+    font-size: 1.2rem;
+    width: 350px;
+    padding-left: 40px;
+}
+#pied #horaires h3 {
+  padding-left: 15px;
+}
+#pied #horaires h4{
+  padding-top: 20px;
+  font-family: 'roboto';
+  font-size: 1.2rem;
+  color: var(--saumon);
+}
+#pied #horaires #ouverture .jour {
+  font-weight: 200;
+  text-transform: uppercase;
+}
+#pied #horaires #ouverture td{
+  text-align: left;
+}
+#pied #finpage {
+  display: flex;
+  margin-top: 20px;
+  max-width: 800px;
+}
+#pied .colonne {
+  width: 50%;
+}
+#pied #liens {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#pied #liens a{
+  padding:5px;
+  margin: 7px;
+  font-size: 2.5rem;
+  color: var(--text-blanc);
+  border: 2px solid var(--text-blanc);
+  border-radius: 50%;
+  width: 50px;
+  margin-left: 33%;
+  background-color: var(--fond-noir);
+}
+#pied #liens a:hover {
+  color: rgb(202, 119, 64);
+  background-color: var(--text-blanc);
+}
+#pied #finpage #legale {
+  padding: 10px ;
+  font-size: 0.9rem;
+  margin-right: 15px;
+}
+#pied #finpage #legale h3 {
+  font-size: 1.1rem;
+  padding-bottom: 10px;
+}
+#pied #finpage #legale p{
+  padding-bottom: 10px;
+}
+#pied #copyright {
+  background-color: rgb(133, 97, 81);
+  color: var(--fond-noir);
+  padding: 5px;
+  font-size: 1.1rem;
+}
+#pied #copyright a{
+  color: var(--fond-noir);
+}
+#pied #copyright a:hover{
+  color: rgb(202, 119, 64);
+}
+/* page de contact */
+#infos {
+  padding-top: 50px;
+}
+#infos h3 {
+  font-family: 'realist';
+  font-size: 2rem;
+  padding-bottom: 15px;
+}
+#infos a{
+  color: rgb(116, 137, 168);
+}
+#infos a:hover {
+  color: rgb(160, 115, 57);
+}
+#infos p{
+  padding: 5px;
+}
+#infos i{
+  padding-right: 15px;
+}
+#contact {
+  margin-top: 20px;
+  padding-top: 20px;
+  font-family: 'philo';
+  font-size: 1.2rem;
+  padding-bottom: 20px;
+}
+#contact p{
+  margin:12px 0;
+}
+#contact input {
+  padding:4px;
+  font-size: 1rem;
+}
+#contact h3 {
+  padding-bottom: 15px;
+  font-weight: 800;
+}
+#contact label{
+  display:inline-block;
+  width:180px;
+  vertical-align: center;
+  text-align: left;
+}
+#contact label.petit{
+  width:30px;
+  text-align: left;
+}
+#contact textarea{
+  width:300px;
+  padding:5px;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+#contact textarea:focus {
+  background-color: rgb(196, 207, 228);
+}
+#contact textarea:hover{
+  background-color:rgb(196, 228, 226);  
+}
+#contact .boutonform {
+    background-color: var(--saumon);
+    border:none;
+    border:1px solid #0085a6;
+    margin:10px 10px 0 0;
+    padding:10px 10px;
+    border-radius:3px;
+    font-size:1rem;
+    text-transform:uppercase;
+    }
+  #contact #votremessage {
+    font-family: 'philob';
+    padding-top: 20px;
+    font-size: 1.3rem;
+  }
+  #contact input:hover{
+    background-color: rgb(196, 228, 226);
+  }
+  #contact input:focus{
+    border: none;
+    background-color:rgb(196, 207, 228);
+    }
+  #contact .boutonform:hover {
+    cursor: pointer;
+    background-color: rgb(250, 157, 81);
+    color: white;
+    box-shadow: 0 0 10px rgb(71, 71, 71);
+  }
+  /* Blog  */
+  .fondblog {
+    background-color: var(--gris);
+    box-shadow: 0 0 10px rgb(71, 71, 71);
+    padding-top: 25px;
+    padding-bottom: 20px;
+  }
+#blog #actualite {
+    padding-top: 25px;
+    font-family: 'roboto';
+    font-weight: 300;
+    font-size: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#blog img {
+  max-width: 350px;
+  margin: 5px;
+}
+#blog .card_container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 10px;
+}
+#blog .card h4 {
+  font-size: 1rem;
+  font-family: 'roboto';
+  font-weight: 300;
+}
+#blog .card h5 {
+  padding-top: 5px;
+  padding-bottom: 15px;
+  font-size: 1.1rem;
+
+}
+#blog .card .lienblog {
+  display: flex;
+  justify-content:space-between;
+  font-size: 1.1rem;
+  width: 100%;
+  margin-bottom: 10px;
+}
+#blog .card .lienblog a{
+padding-right: 10px;
+color: rgb(197, 90, 2) ;
+}
+#blog #navigationblog {
+  padding-top: 10px;
+}
+#blog #navigationblog a {
+  color: black;
+}
+#blog #navigationblog a:first-child {
+  color:var(--saumon);
+}
+/* mise en page des articles du blog */
+.containertext {
+  max-width: 1000px;
+  margin:auto;
+}
+.articlesblog .pagedublog {
+  background-color:var(--gris);
+    box-shadow: 0 0 10px rgb(71, 71, 71);
+    padding-bottom: 50px;
+    font-size: 1.2rem;
+}
+.articlesblog .pagedublog img {
+  padding-top: 20px;
+  width: 95%;
+}
+.articlesblog .pagedublog .containertext h3, .containertext h4 {
+  padding-left: 50px;
+  text-align: left;
+}
+.articlesblog .pagedublog .containertext h3 {
+  font-size: 1.2rem;
+  font-weight: 300;
+  padding-top: 15px;
+}
+.articlesblog .pagedublog .containertext h4 {
+  font-family: 'roboto';
+  text-transform: uppercase;
+  padding-bottom: 15px;
+}
+.articlesblog .pagedublog .containertext p {
+  padding: 10px 50px 10px 50px;
+  text-align: justify;
+}
+#boutonfixeblog {
+  position: fixed;
+  top: 450px;
+  right: 0px;
+  padding-right: 10px;
+}
+#boutonfixeblog a{
+  border: 1px solid var(--saumon);
+  padding: 5px;
+  color:rgb(197, 90, 2);
+  background-color: var(--saumon);
+  border-radius: 20%;
+  opacity: 0.7;
+}
+@media screen and (min-width:750px) {
+
+}
